@@ -1,0 +1,193 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: #05070a;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#gameCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  image-rendering: pixelated;
+  cursor: crosshair;
+}
+
+/* ── Screens ─────────────────────────────── */
+.screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 7, 10, 0.92);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  transition: opacity 0.2s;
+}
+
+.screen.hidden {
+  display: none;
+}
+
+.screen-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 24px;
+  width: min(420px, 92vw);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+}
+
+/* ── Start Screen ────────────────────────── */
+.title {
+  font-size: clamp(52px, 14vw, 72px);
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: #3498db;
+  text-shadow: 0 0 30px #3498db, 0 0 60px #3498db88;
+  line-height: 1;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #aaa;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: -8px;
+}
+
+.how-to {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 14px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.how-to p { font-size: 14px; color: #ccc; }
+.controls-hint { font-size: 12px !important; color: #666 !important; margin-top: 4px; }
+
+.high-score {
+  font-size: 14px;
+  color: #f1c40f;
+  letter-spacing: 1px;
+}
+
+/* ── Buttons ─────────────────────────────── */
+.btn-primary {
+  padding: 14px 48px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  background: linear-gradient(135deg, #2980b9, #3498db);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #3498db66;
+  transition: transform 0.12s, box-shadow 0.12s;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.btn-primary:active {
+  transform: scale(0.96);
+  box-shadow: 0 0 10px #3498db44;
+}
+
+/* ── Level Up Screen ─────────────────────── */
+.levelup-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: #f1c40f;
+  text-shadow: 0 0 20px #f1c40f88;
+  letter-spacing: 2px;
+}
+
+.levelup-sub {
+  font-size: 14px;
+  color: #aaa;
+  margin-top: -8px;
+}
+
+.upgrade-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.upgrade-card {
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.12s, border-color 0.15s;
+  touch-action: manipulation;
+}
+
+.upgrade-card:hover,
+.upgrade-card:active {
+  background: rgba(52, 152, 219, 0.2);
+  border-color: #3498db;
+  transform: scale(1.02);
+}
+
+.upgrade-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.upgrade-desc {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* ── Game Over Screen ────────────────────── */
+.dead-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #e74c3c;
+  text-shadow: 0 0 20px #e74c3c88;
+  letter-spacing: 2px;
+}
+
+.stats-box {
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.stat-val {
+  font-weight: 700;
+  color: #fff;
+  font-size: 16px;
+}
+
+.stat-best { color: #f1c40f !important; }
+.stat-new  { color: #2ecc71; font-size: 12px; margin-left: 6px; }

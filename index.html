@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>SURGE - Endless Survivor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Start Screen -->
+  <div id="startScreen" class="screen">
+    <div class="screen-inner">
+      <h1 class="title">SURGE</h1>
+      <p class="subtitle">Endless Survivor</p>
+      <div class="how-to">
+        <p>⚔️ Auto-attack enemies</p>
+        <p>📈 Level up &amp; choose upgrades</p>
+        <p>🏆 Survive as long as possible</p>
+        <p class="controls-hint">🕹️ Touch left side to move &nbsp;|&nbsp; WASD on desktop</p>
+      </div>
+      <button id="startBtn" class="btn-primary">▶ PLAY</button>
+      <div id="highScoreDisplay" class="high-score">Best: 00:00</div>
+    </div>
+  </div>
+
+  <!-- Level Up Screen -->
+  <div id="levelUpScreen" class="screen hidden">
+    <div class="screen-inner">
+      <h2 class="levelup-title">⬆ LEVEL UP!</h2>
+      <p class="levelup-sub">Choose an upgrade</p>
+      <div id="upgradeCards" class="upgrade-grid"></div>
+    </div>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div id="gameOverScreen" class="screen hidden">
+    <div class="screen-inner">
+      <h2 class="dead-title">💀 YOU FELL</h2>
+      <div id="statsBox" class="stats-box"></div>
+      <button id="restartBtn" class="btn-primary">↺ TRY AGAIN</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

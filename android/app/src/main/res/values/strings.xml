@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SURGE</string>
+    <string name="title_activity_main">SURGE</string>
+    <string name="package_name">com.thamindu.surge</string>
+    <string name="custom_url_scheme">com.thamindu.surge</string>
+</resources>
